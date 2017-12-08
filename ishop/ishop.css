@@ -1,35 +1,19 @@
-﻿.VotesBlock
-{
-  border: double gray 3px;
-  width: 180px;
-  padding: 3px 7px;
-  background-color: #F0F0F0;
+﻿
+.title {
+  text-align: center;
+  font-size: 50px;
 }
 
-.VotesBlock .Question
-{
-  font-weight: bold;
+.table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 70vw;
+  min-width: 400px;
+  text-align: center;
+  margin: auto;
+  background-color: rgb(233, 231, 231);
 }
-
-.VotesBlock .Answers
-{
-  padding-top: 5px;
-}
-
-.VotesBlock .Answers .Answer
-{
-  padding: 2px 0;
-}
-
-.VotesBlock .Answers .Answer .Count
-{
-  float: right;
-  width: 30px;
-  font-weight: bold;
-  text-align: right;
-}
-
-.VotesBlock .Answers .Answer .Text
-{
-  margin-right: 30px;
+.col {
+  border: 1px solid black;
+  width: 25%;
 }

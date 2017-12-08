@@ -1,32 +1,46 @@
-﻿var VotesBlock = React.createClass({
+﻿var PriceOfCarsBlock = React.createClass({
 
-  displayName: 'VotesBlock',
+  displayName: 'PriceOfCarsBlock',
 
   propTypes: {
-    question: React.PropTypes.string.isRequired,
-    answers: React.PropTypes.array.isRequired,
-    /*
-    answers:React.PropTypes.arrayOf(
+    title: React.PropTypes.string.isRequired,
+    
+    products:React.PropTypes.arrayOf(
       React.PropTypes.shape({
         code: React.PropTypes.number.isRequired,
         count: React.PropTypes.number.isRequired,
-        text: React.PropTypes.string.isRequired,
+        name: React.PropTypes.string.isRequired,
+        price: React.PropTypes.number.isRequired,
+        url: React.PropTypes.string.isRequired,
+        height: React.PropTypes.number.isRequired,
       })
     )
-    */
+    
   },
 
   render: function() {
 
-    var answersCode=this.props.answers.map( v =>
-        React.DOM.div({key:v.code,className:'Answer'},
-          React.DOM.span({className:'Count'},v.count),
-          React.DOM.span({className:'Text'},v.text),
+    var priceCode=this.props.products.map( v =>
+        React.DOM.tr({key:v.code,className:'row'},
+          React.DOM.td({className:'col'},React.DOM.img({className:'', src: v.url, height: v.height})),
+          React.DOM.td({className:'col'},v.name),
+          React.DOM.td({className:'col'},v.price),
+          React.DOM.td({className:'col'},v.count),
         )
-      );
-    return React.DOM.div( {className:'VotesBlock'}, 
-      React.DOM.div( {className:'Question'}, this.props.question ),
-      React.DOM.div( {className:'Answers'}, answersCode ),
+      );   
+      
+      var headOfTable = React.DOM.tr({className:'row'},
+          React.DOM.td({className:'col'},this.props.head.logo),
+          React.DOM.td({className:'col'},this.props.head.name),
+          React.DOM.td({className:'col'},this.props.head.price),
+          React.DOM.td({className:'col'},this.props.head.count),
+      );  
+
+    return React.DOM.div( {className:'main'}, 
+      React.DOM.div( {className:'title'}, this.props.title ),
+      React.DOM.table( {className:'table'}, 
+      React.DOM.thead( {className:'head'}, headOfTable ), 
+      React.DOM.tbody( {className:'tbody'}, priceCode ) ),
     );
   },
 
