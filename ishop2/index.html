@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta charset="utf-8" />
+  <title>ishop</title>
+</head> 
+<body> 
+  <div id="container"></div> 
+      
+  <script src="https://unpkg.com/react@15/dist/react.js"></script> 
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
+      
+  <script src="ishop.js"></script>
+  <link rel="stylesheet" type="text/css" href="ishop.css" />
+
+  <script>
+
+    var titleOfPrice='Price list';
+    var productsArr=[ 
+      {name:'BMW', code:1, price:32000, url:"img/bmw.png", count:222, height: 100}, 
+      {name:'AUDI', code:2, price:24000, url:"img/audi.png", count:123, height: 100}, 
+      {name:'MERCEDES', code:3, price:37000, url:"img/mercedes.png", count:62, height: 100}, 
+      {name:'MAZDA', code:4, price:15000, url:"img/mazda.png", count:320, height: 100}, 
+      {name:'FERRARI', code:5, price:20000, url:"img/ferrari.png", count:32, height: 100}, 
+    ];
+
+    var headArr= {
+      logo:'Logo', name:"Name", price: "Price", count:"In stock",
+    };
+ 
+    ReactDOM.render(
+      React.createElement(PriceOfCarsBlock,{title:titleOfPrice, products:productsArr, head: headArr}), 
+      document.getElementById('container') 
+    );
+
+  </script>
+
+</body> 
+</html>
