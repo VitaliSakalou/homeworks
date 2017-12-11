@@ -14,7 +14,7 @@
 
 getInitialState: function(){
   return {
-    partOfString: null,
+    partOfString: '',                                 //начальное значение 
     checked: false,
   }
 },
@@ -30,7 +30,7 @@ checkedValueFalse: function(){
 },
 
 filterStringValue: function(fat) { 
-  console.log('Значение partOfString - '+fat); 
+  console.log('Значение partOfString - '+typeof(fat)); 
   this.setState( {partOfString:fat} );
 },
 
@@ -40,22 +40,7 @@ sort: function(a, b) {                        //функция сортиров�
   return 0;
 },
 
-  render: function() {
-    if (this.state.partOfString){                           //если строка поиска пустая - показываем все строки
-      if(this.state.checked){
-        var FilterList = React.DOM.ul({className: 'list'},
-        this.props.strings.sort(this.sort).map( v =>
-         React.DOM.li({className: 'point', key: v.code}, v.string),
-        ),
-      )
-      } else {
-        var FilterList = React.DOM.ul({className: 'list'},
-        this.props.strings.map( v =>
-         React.DOM.li({className: 'point', key: v.code}, v.string),
-        ),
-      )
-      }
-    } else {                                                        //если не пустая - фильтруем строки и показываем
+  render: function() {                                                     
       if(this.state.checked){
         var FilterList = React.DOM.ul({className: 'list'},
         this.props.strings.filter(v => v.string.indexOf(this.state.partOfString) > -1).sort(this.sort).map( v =>
@@ -70,7 +55,7 @@ sort: function(a, b) {                        //функция сортиров�
         ),
       )
       }
-    }
+    // }
 
     return React.DOM.div( {className:'main'}, 
     React.DOM.div({className: 'filter-settings'},
