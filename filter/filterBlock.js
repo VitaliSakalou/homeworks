@@ -15,7 +15,7 @@
 getInitialState: function(){
   return {
     partOfString: null,
-    checked: true,
+    checked: false,
   }
 },
 
@@ -34,19 +34,42 @@ filterStringValue: function(fat) {
   this.setState( {partOfString:fat} );
 },
 
+sort: function(a, b) {                        //функция сортировки по алфавиту
+  if (a.string < b.string)  return -1;
+  if (a.string > b.string)  return 1;
+  return 0;
+},
+
   render: function() {
-    if (this.state.partOfString == null){                           //если строка поиска пустая - показываем все строки
-      var FilterList = React.DOM.ul({className: 'list'},
-      this.props.strings.map( v =>
-       React.DOM.li({className: 'point', key: v.code}, v.string),
-      ),
-    )
+    if (this.state.partOfString){                           //если строка поиска пустая - показываем все строки
+      if(this.state.checked){
+        var FilterList = React.DOM.ul({className: 'list'},
+        this.props.strings.sort(this.sort).map( v =>
+         React.DOM.li({className: 'point', key: v.code}, v.string),
+        ),
+      )
+      } else {
+        var FilterList = React.DOM.ul({className: 'list'},
+        this.props.strings.map( v =>
+         React.DOM.li({className: 'point', key: v.code}, v.string),
+        ),
+      )
+      }
     } else {                                                        //если не пустая - фильтруем строки и показываем
-      var FilterList = React.DOM.ul({className: 'list'},
-      this.props.strings.filter(v => v.string.indexOf(this.state.partOfString) > -1).map( v =>
-       React.DOM.li({className: 'point', key: v.code}, v.string),
-      ),
-    )
+      if(this.state.checked){
+        var FilterList = React.DOM.ul({className: 'list'},
+        this.props.strings.filter(v => v.string.indexOf(this.state.partOfString) > -1).sort(this.sort).map( v =>
+         React.DOM.li({className: 'point', key: v.code}, v.string),
+        ),
+      )
+      }
+      else {
+        var FilterList = React.DOM.ul({className: 'list'},
+        this.props.strings.filter(v => v.string.indexOf(this.state.partOfString) > -1).map( v =>
+         React.DOM.li({className: 'point', key: v.code}, v.string),
+        ),
+      )
+      }
     }
 
     return React.DOM.div( {className:'main'}, 
