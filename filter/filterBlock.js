@@ -41,28 +41,15 @@ sort: function(a, b) {                        //функция сортиров�
 },
 
   render: function() {                                                     
-      if(this.state.checked){
-        var FilterList = React.DOM.ul({className: 'list'},
-        this.props.strings.filter(v => v.string.indexOf(this.state.partOfString) > -1).sort(this.sort).map( v =>
-         React.DOM.li({className: 'point', key: v.code}, v.string),
-        ),
-      )
-      }
-      else {
-        var FilterList = React.DOM.ul({className: 'list'},
-        this.props.strings.filter(v => v.string.indexOf(this.state.partOfString) > -1).map( v =>
-         React.DOM.li({className: 'point', key: v.code}, v.string),
-        ),
-      )
-      }
-
     return React.DOM.div( {className:'main'}, 
     React.DOM.div({className: 'filter-settings'},
       React.createElement(FilterCheck, {cbCheckedValueTrue:this.checkedValueTrue,
         cbCheckedValueFalse:this.checkedValueFalse, checked:this.state.checked }),
       React.createElement(FilterString, {cbFilterStringValue:this.filterStringValue}),
     ),
-    React.DOM.div({className: 'list-block'},FilterList),
+    React.createElement(FilterList, {className: 'list-block', 
+    checked:this.state.checked, strings:this.props.strings, sort: this.sort,
+     partOfString: this.state.partOfString}),
     );
   },
 
