@@ -55,7 +55,6 @@ sort: function(a, b) {                        //функция сортиров�
         ),
       )
       }
-    // }
 
     return React.DOM.div( {className:'main'}, 
     React.DOM.div({className: 'filter-settings'},
