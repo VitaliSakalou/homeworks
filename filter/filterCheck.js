@@ -6,12 +6,10 @@ var FilterCheck = React.createClass({
         if (this.props.checked){
             console.log(this.props.checked);
             this.props.cbCheckedValueFalse();
-            console.log(this.props.checked);
         }
         else {
             console.log(this.props.checked);
             this.props.cbCheckedValueTrue();
-            console.log(this.props.checked);
         }
       },
 

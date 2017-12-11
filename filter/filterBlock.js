@@ -14,8 +14,8 @@
 
 getInitialState: function(){
   return {
-    partOfString: '',                                 //начальное значение 
-    checked: false,
+    partOfString: '',                                 //начальное значение в окне
+    checked: false,                                   //начальное значение чекбокса
   }
 },
 
