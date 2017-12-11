@@ -1,0 +1,25 @@
+﻿.list {
+  font-size: 25px;
+  list-style: none;
+}
+
+.list-block {
+  height: 300px;
+  width: 50%;
+  background-color: rgb(245, 187, 197);
+  margin: auto;
+  overflow: scroll;
+}
+
+.main {
+text-align: center;
+}
+
+.filter-settings {
+  padding: 20px;
+}
+
+.label-check {
+  padding-right: 20px;
+  font-size: 20px;
+}

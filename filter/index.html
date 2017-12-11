@@ -10,26 +10,34 @@
   <script src="https://unpkg.com/react@15/dist/react.js"></script> 
   <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
       
-  <script src="ishop.js"></script>
-  <link rel="stylesheet" type="text/css" href="ishop.css" />
+  <script src="filterBlock.js"></script>
+  <!-- <script src="filterPoint.js"></script> -->
+  <script src="filterCheck.js"></script>
+  <script src="filterString.js"></script>
+  <link rel="stylesheet" type="text/css" href="filter.css" />
 
   <script>
 
-    var titleOfPrice='Price list';
-    var productsArr=[ 
-      {name:'BMW', code:1, price:32000, url:"img/bmw.png", count:222, height: 100}, 
-      {name:'AUDI', code:2, price:24000, url:"img/audi.png", count:123, height: 100}, 
-      {name:'MERCEDES', code:3, price:37000, url:"img/mercedes.png", count:62, height: 100}, 
-      {name:'MAZDA', code:4, price:15000, url:"img/mazda.png", count:320, height: 100}, 
-      {name:'FERRARI', code:5, price:20000, url:"img/ferrari.png", count:32, height: 100}, 
+    var stringArr=[ 
+      {string: 'В лесу родилась елочка', code: 1,},
+      {string: 'В лесу она росла', code: 2,},
+      {string: 'Зимой и летом стройная', code: 3,},
+      {string: 'Зеленая была', code: 4,},
+      {string: 'Метель ей пела песенку', code: 5,},
+      {string: 'Спи, елочка, бай-бай', code: 6,},
+      {string: 'Мороз снежком укутывал', code: 7,},
+      {string: 'Смотри, не замерзай', code: 8,}, 
+      {string: 'Трусишка зайка серенький', code: 9,},
+      {string: 'Под елочкой скакал.', code: 10,},
+      {string: 'Порою волк, сердитый волк', code: 11,},
+      {string: 'Рысцою пробегал.', code: 12,}, 
     ];
+    
 
-    var headArr= {
-      logo:'Logo', name:"Name", price: "Price", count:"In stock",
-    };
- 
+
+
     ReactDOM.render(
-      React.createElement(PriceOfCarsBlock,{title:titleOfPrice, products:productsArr, head: headArr}), 
+      React.createElement(filterBlock,{strings:stringArr}), 
       document.getElementById('container') 
     );
 
