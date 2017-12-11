@@ -25,28 +25,9 @@
 },
 
   render: function() {
-
-    var priceCode=this.props.products.map( v =>
-        React.DOM.tr({key:v.code,className:'row'},
-          React.DOM.td({className:'col'},React.DOM.img({className:'', src: v.url, height: v.height})),
-          React.DOM.td({className:'col'},v.name),
-          React.DOM.td({className:'col'},v.price),
-          React.DOM.td({className:'col'},v.count),
-        )
-      );   
-
-    var headOfTable = React.DOM.tr({className:'row'},
-        React.DOM.td({className:'col'},this.props.head.logo),
-        React.DOM.td({className:'col'},this.props.head.name),
-        React.DOM.td({className:'col'},this.props.head.price),
-        React.DOM.td({className:'col'},this.props.head.count),
-      );  
-
     return React.DOM.div( {className:'main'}, 
-      React.DOM.div( {className:'title'}, this.props.title ),
-      React.DOM.table( {className:'table'}, 
-      React.DOM.thead( {className:'head'}, headOfTable ), 
-      React.DOM.tbody( {className:'tbody'}, priceCode ) ),
+      React.createElement( ShopTitle,{ title: this.props.title},),
+      React.createElement(Table, {products: this.props.products, head: this.props.head}),
     );
   },
 
