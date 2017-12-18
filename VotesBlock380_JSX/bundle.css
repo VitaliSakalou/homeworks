@@ -1,0 +1,44 @@
+
+.title {
+    text-align: center;
+    font-size: 50px;
+  }
+.col {
+    border: 1px solid black;
+    width: 25%;
+  }
+
+  .btn {
+    width: 100px;
+    height: 30px;
+    background-color: aquamarine;
+    border: 1px solid black;
+  }
+
+  .btn:hover {
+    background-color: deepskyblue;
+    color: white;
+  }.cardProduct{
+    background-color: navajowhite;
+    width: 70vw;
+    min-width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: left;
+  }
+.table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 70vw;
+    min-width: 400px;
+    text-align: center;
+    margin: auto;
+    background-color: rgb(233, 231, 231);
+    color: black;
+  }
+.btnNewProd{
+  text-align: right;
+  margin-right: 20%;
+  margin-top: 20px;
+}
+

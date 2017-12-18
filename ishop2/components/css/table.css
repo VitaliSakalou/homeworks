@@ -1,0 +1,11 @@
+
+.table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 70vw;
+    min-width: 400px;
+    text-align: center;
+    margin: auto;
+    background-color: rgb(233, 231, 231);
+    color: black;
+  }

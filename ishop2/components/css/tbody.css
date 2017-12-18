@@ -1,0 +1,17 @@
+
+.col {
+    border: 1px solid black;
+    width: 25%;
+  }
+
+  .btn {
+    width: 100px;
+    height: 30px;
+    background-color: aquamarine;
+    border: 1px solid black;
+  }
+
+  .btn:hover {
+    background-color: deepskyblue;
+    color: white;
+  }
