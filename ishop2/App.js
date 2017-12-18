@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 
 import DemoPage from './components/main';
 
- let productsArr=require('./products.json');
+let productsArr=require('./products.json');
 
 ReactDOM.render(
   <DemoPage products={productsArr}/>
