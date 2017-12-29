@@ -7,6 +7,7 @@ import VotesQuestion from './VotesQuestion';
 import VotesAnswer from './VotesAnswer';
 import ColorFrame from './ColorFrame';
 
+
 class VotesBlock extends React.Component {
 
   static propTypes = {
@@ -72,18 +73,18 @@ class VotesBlock extends React.Component {
 
     return (
       <div className='VotesBlock'>
-        <VotesQuestion question={this.props.question}/>
-        <ColorFrame colors={this.props.colors}>
-          <div className='Answers'>{answersCode}</div>
+        <ColorFrame colors={this.props.colors} count = {0}>
+          <VotesQuestion question={this.props.question}/>
+        </ColorFrame><br/>
+        <ColorFrame colors={this.props.colors} count = {0}>
+            <div className='Answers'>{answersCode}</div>
         </ColorFrame>
         {
           ((this.state.workMode==1)&&this.state.selectedAnswerCode) &&
           <input type='button' value='проголосовать' onClick={this.vote} />
         }
       </div>
-    )
-    ;
-
+    );
   }
 
 }

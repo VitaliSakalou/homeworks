@@ -1,17 +1,16 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
 
-let count = 0;
 
 const ColorFrame = ( props ) => {
-  console.log(props.colors);
-  count++;
+  let count = props.count+1;
   console.log(count);
+  console.log(props.colors);
   return (
            <div style={{border:"dashed 1px "+props.colors[count-1],padding:"10px"}}>
            {(count == props.colors.length)
-            ?  props.children
-            : <ColorFrame colors= {props.colors}>{props.children}</ColorFrame>
+            ?  props.children 
+            : <ColorFrame colors= {props.colors} count = {count}>{props.children}</ColorFrame>
            }
             </div>
          )
