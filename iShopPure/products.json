@@ -1,0 +1,8 @@
+
+[
+    {"name":"BMW", "code":1, "price":32000, "url":"components/img/bmw.png", "count":222, "height": 100},
+    {"name":"AUDI", "code":2, "price":24000, "url":"components/img/audi.png", "count":123, "height": 100},
+    {"name":"MERCEDES", "code":3, "price":37000, "url":"components/img/mercedes.png", "count":62, "height": 100},
+    {"name":"MAZDA", "code":4, "price":15000, "url":"components/img/mazda.png", "count":320, "height": 100},
+    {"name":"FERRARI", "code":5, "price":20000, "url":"components/img/ferrari.png", "count":32, "height": 100}
+]

@@ -1018,8 +1018,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var NewProduct = function (_React$Component) {
-    _inherits(NewProduct, _React$Component);
+var NewProduct = function (_React$PureComponent) {
+    _inherits(NewProduct, _React$PureComponent);
 
     function NewProduct() {
         var _ref;
@@ -1147,7 +1147,7 @@ var NewProduct = function (_React$Component) {
     }]);
 
     return NewProduct;
-}(_react2.default.Component);
+}(_react2.default.PureComponent);
 
 NewProduct.propTypes = {
     cbCancel: _propTypes2.default.func.isRequired,
@@ -19226,8 +19226,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var PriceOfCarsBlock = function (_React$Component) {
-    _inherits(PriceOfCarsBlock, _React$Component);
+var PriceOfCarsBlock = function (_React$PureComponent) {
+    _inherits(PriceOfCarsBlock, _React$PureComponent);
 
     function PriceOfCarsBlock() {
         var _ref;
@@ -19295,7 +19295,7 @@ var PriceOfCarsBlock = function (_React$Component) {
     }]);
 
     return PriceOfCarsBlock;
-}(_react2.default.Component);
+}(_react2.default.PureComponent);
 
 PriceOfCarsBlock.propTypes = {
     title: _propTypes2.default.string.isRequired,
@@ -19350,8 +19350,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ShopTitle = function (_React$Component) {
-    _inherits(ShopTitle, _React$Component);
+var ShopTitle = function (_React$PureComponent) {
+    _inherits(ShopTitle, _React$PureComponent);
 
     function ShopTitle() {
         _classCallCheck(this, ShopTitle);
@@ -19371,7 +19371,7 @@ var ShopTitle = function (_React$Component) {
     }]);
 
     return ShopTitle;
-}(_react2.default.Component);
+}(_react2.default.PureComponent);
 
 ShopTitle.propTypes = {
     title: _propTypes2.default.string.isRequired
@@ -19394,8 +19394,6 @@ exports.default = ShopTitle;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -19435,8 +19433,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Table = function (_React$Component) {
-    _inherits(Table, _React$Component);
+var Table = function (_React$PureComponent) {
+    _inherits(Table, _React$PureComponent);
 
     function Table() {
         var _ref;
@@ -19487,13 +19485,13 @@ var Table = function (_React$Component) {
                         'tbody',
                         { className: 'tbody' },
                         this.props.products.map(function (v) {
-                            return _react2.default.createElement(_ishop2tbody2.default, _extends({
-                                key: v.code, id: count++ }, products, {
-                                cbColorFunc: _this2.props.cbColorFunc,
+                            return _react2.default.createElement(_ishop2tbody2.default, {
+                                key: v.code, url: v.url, height: v.height, name: v.name, id: count++,
+                                price: v.price, count: v.count, cbColorFunc: _this2.props.cbColorFunc,
                                 selectedColor: _this2.props.selectedColor, selectedElement: _this2.props.selectedElement,
                                 cbEditProd: _this2.editProduct, edit: _this2.state.edit, cbCloseEdit: _this2.closeEdit,
                                 cbDeleteElement: _this2.props.cbDeleteElement, cbCancel: _this2.props.cbCancel
-                            }));
+                            });
                         })
                     )
                 ),
@@ -19513,7 +19511,7 @@ var Table = function (_React$Component) {
     }]);
 
     return Table;
-}(_react2.default.Component);
+}(_react2.default.PureComponent);
 
 Table.propTypes = {
 
@@ -19566,8 +19564,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var TableHead = function (_React$Component) {
-    _inherits(TableHead, _React$Component);
+var TableHead = function (_React$PureComponent) {
+    _inherits(TableHead, _React$PureComponent);
 
     function TableHead() {
         _classCallCheck(this, TableHead);
@@ -19610,7 +19608,7 @@ var TableHead = function (_React$Component) {
     }]);
 
     return TableHead;
-}(_react2.default.Component);
+}(_react2.default.PureComponent);
 
 TableHead.propTypes = {
     head: _propTypes2.default.shape({
@@ -19653,8 +19651,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var TableRow = function (_React$Component) {
-    _inherits(TableRow, _React$Component);
+var TableRow = function (_React$PureComponent) {
+    _inherits(TableRow, _React$PureComponent);
 
     function TableRow() {
         var _ref;
@@ -19738,7 +19736,7 @@ var TableRow = function (_React$Component) {
     }]);
 
     return TableRow;
-}(_react2.default.Component);
+}(_react2.default.PureComponent);
 
 TableRow.propTypes = {
     count: _propTypes2.default.number.isRequired,
@@ -19793,8 +19791,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var CardProduct = function (_React$Component) {
-    _inherits(CardProduct, _React$Component);
+var CardProduct = function (_React$PureComponent) {
+    _inherits(CardProduct, _React$PureComponent);
 
     function CardProduct() {
         var _ref;
@@ -19958,7 +19956,7 @@ var CardProduct = function (_React$Component) {
     }]);
 
     return CardProduct;
-}(_react2.default.Component);
+}(_react2.default.PureComponent);
 
 CardProduct.propTypes = {
     count: _propTypes2.default.number.isRequired,

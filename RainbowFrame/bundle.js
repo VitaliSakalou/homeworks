@@ -18407,10 +18407,15 @@ var VotesBlock = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'VotesBlock' },
-        _react2.default.createElement(_VotesQuestion2.default, { question: this.props.question }),
         _react2.default.createElement(
           _ColorFrame2.default,
-          { colors: this.props.colors },
+          { colors: this.props.colors, count: 0 },
+          _react2.default.createElement(_VotesQuestion2.default, { question: this.props.question })
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          _ColorFrame2.default,
+          { colors: this.props.colors, count: 0 },
           _react2.default.createElement(
             'div',
             { className: 'Answers' },
@@ -19272,18 +19277,16 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var count = 0;
-
 var ColorFrame = function ColorFrame(props) {
-  console.log(props.colors);
-  count++;
+  var count = props.count + 1;
   console.log(count);
+  console.log(props.colors);
   return _react2.default.createElement(
     'div',
     { style: { border: "dashed 1px " + props.colors[count - 1], padding: "10px" } },
     count == props.colors.length ? props.children : _react2.default.createElement(
       ColorFrame,
-      { colors: props.colors },
+      { colors: props.colors, count: count },
       props.children
     )
   );
