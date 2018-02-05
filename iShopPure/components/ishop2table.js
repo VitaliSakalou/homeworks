@@ -40,6 +40,7 @@ class Table extends  React.PureComponent{
         nameValid: false,
         priceValid: false,
         countValid: false,
+        products:  this.props.products,
     };
 
     editProduct = () => {
@@ -61,24 +62,25 @@ class Table extends  React.PureComponent{
     };
 
     render(){
+        console.log("Таблица - render");
         let count = 0;
+        let productsRow = this.props.products.map( v =>
+            <TableRow
+                key={v.code} url= {v.url} height= {v.height} name={v.name} id={count++}
+                price={v.price} count={v.count} cbColorFunc={this.props.cbColorFunc}
+                selectedColor={this.props.selectedColor} selectedElement={this.props.selectedElement}
+                cbEditProd={this.editProduct} edit={this.state.edit} cbCloseEdit={this.closeEdit}
+                cbDeleteElement={this.props.cbDeleteElement} cbCancel={this.props.cbCancel}
+            />
+        );
         return (
             <div>
                 <table className='table'>
                     <TableHead head={this.props.head}/>
                     <tbody className='tbody'>
-                        {this.props.products.map( v =>
-                            <TableRow
-                                key={v.code} url= {v.url} height= {v.height} name={v.name} id={count++}
-                                price={v.price} count={v.count} cbColorFunc={this.props.cbColorFunc}
-                                selectedColor={this.props.selectedColor} selectedElement={this.props.selectedElement}
-                                cbEditProd={this.editProduct} edit={this.state.edit} cbCloseEdit={this.closeEdit}
-                                cbDeleteElement={this.props.cbDeleteElement} cbCancel={this.props.cbCancel}
-                            />
-                        )}
+                        {productsRow}
                     </tbody>
                 </table>
-
                 {
                     (this.props.selectedElement || this.props.selectedElement==0) &&
                     <CardProduct name={this.props.products[this.props.selectedElement].name}

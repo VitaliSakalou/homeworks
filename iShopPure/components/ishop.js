@@ -48,11 +48,12 @@ class PriceOfCarsBlock extends React.PureComponent {
 
     colorHighlighting =(idRow)=>{
         this.setState({selectedElement: parseInt(idRow)});
-        console.log(this.state.selectedElement);
+        //console.log(this.state.selectedElement);
     };
 
     newElement =()=>{
         this.setState({selectedElement: null});
+        console.log("!");
         this.setState({newEl: true,})
     };
 
@@ -62,9 +63,12 @@ class PriceOfCarsBlock extends React.PureComponent {
 
     removeSelection=()=>{
         this.setState({selectedElement: null});
+        console.log("!!");
     };
 
   render(){
+    console.log("iShop - render");
+    console.log(this.state.selectedElement);
       return(
           <div className='main' onClick={this.removeSelection}>
               <ShopTitle title={this.props.title}/>

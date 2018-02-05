@@ -13,6 +13,7 @@ class TableHead extends  React.PureComponent {
     };
 
     render(){
+        console.log("Шапка - render");
         return (
             <thead className="head">
                 <tr className='row'>

@@ -1,0 +1,92 @@
+﻿.list {
+  background-color: rgb(54, 53, 53);
+  width: 400px;
+  height: 90vh;
+  overflow: scroll;
+  overflow-x:hidden;
+  margin: 0;
+  padding: 0;  
+}
+.item {
+  position: relative;
+  color: white;
+  font-family: 'BrushType-SemiBold', arial;
+  font-size: 30px;
+  list-style: none;
+  height: 75px;
+  border-bottom: 1px solid #777675;
+  background-color: rgb(54, 53, 53);
+}
+.item:hover {
+  cursor: pointer;
+  background-color: #777675;
+}
+.itemNameOfProduct {
+  position: absolute;
+  padding: 20px 0 0 20px;
+  width: 180px;
+  line-height: .8;
+}
+.imageInList {
+  height: 50px;
+  padding: 10px 0 0 0;
+}
+.checked {
+  background-color: #ff6f02;
+}
+.checked:hover {
+  background-color: #ff6f02;
+}
+.listBlock {
+  float: left;
+}
+.input {
+  width: 100%;
+}
+.btn {
+  display:none;
+}
+.btn_visible {
+  display: inline-block;
+  float: right;
+  margin: 20px 10px 0 0;
+}
+.btnBody {
+  color: #fdcaa3;
+  font-family: 'BrushType-SemiBold', arial;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+}
+.btnBody:hover {
+  color: white;
+}
+.btnBody:active {
+  color: #fe2103;
+}
+
+input {
+  background-color: rgb(54, 53, 53);
+  background-image: url('/../../img/logo/search.png');   
+  background-repeat: no-repeat;   
+  background-position: right; 
+  background-size: 30px;
+  font-size: 20px;
+  border: none;
+  height: 50px;
+  color: white;
+  border-bottom: 1px solid white;
+}
+input:focus {
+  /* background-color: white; */
+}
+
+.list::-webkit-scrollbar { width: 5px; height: 3px;}
+.list::-webkit-scrollbar-button {  background-color: rgb(54, 53, 53); }
+.list::-webkit-scrollbar-track {  background-color: rgb(54, 53, 53);}
+.list::-webkit-scrollbar-track-piece { background-color: rgb(54, 53, 53);}
+.list::-webkit-scrollbar-thumb { height: 50px; background-color: rgb(175, 72, 3); border-radius: 3px;}
+.list::-webkit-scrollbar-corner { background-color: rgb(54, 53, 53);}
+.list::-webkit-resizer { background-color: rgb(54, 53, 53);}

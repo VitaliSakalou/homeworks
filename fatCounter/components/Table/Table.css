@@ -1,0 +1,58 @@
+﻿.image {
+  height: 100px;
+}
+.imageBlock {
+  display: inline-block; 
+  position: relative;
+  padding: 5px;
+  width: 125px;
+  height: 115px;
+  transition-duration: .8s;
+}
+.imageBlock:hover {
+  background-color: rgba(52, 41, 47, .5);
+  transition-duration: .8s;
+  cursor: pointer;
+}
+.foodImage {
+  height: 40vh;
+  min-height: 200px;
+  background-image: radial-gradient(#30989c 0%, #0d3334 100%);
+  margin-left: 400px;
+}
+.foodName {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  font-family: 'BrushType-SemiBold', arial;
+  font-size: 18px;
+  line-height: .8;
+}
+.foodCount_ {
+  display: none;
+}
+.foodCount_visible {
+  display: inline-block;
+  position: absolute;
+  bottom: 20px;
+  right: -5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: gold;
+}
+.x_count_ {
+  display: none;
+}
+.x_count_visible {
+  display: inline-block;
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  color: red;
+  font-size: 30px;
+  font-family: 'BrushType-SemiBold', arial;
+}

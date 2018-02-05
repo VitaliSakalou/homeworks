@@ -1,0 +1,44 @@
+.btnMinus {
+    width: 50px;
+    height: 25px;
+    margin: 10px;
+    background-color: rgb(31, 210, 216);
+}
+
+.btnPlus {
+    width: 50px;
+    height: 25px;
+    margin: 10px;
+    background-color: rgb(181, 30, 201);
+}
+
+.btnMult {
+    width: 50px;
+    height: 25px;
+    margin: 10px;
+    background-color: rgb(216, 31, 77);
+}
+
+.BtnBlock {
+    width: 330px;
+    background-color: grey;
+    float:left; 
+}
+.diagramBlock {
+   float:right;  
+   height: 345px;
+   display: flex;
+   align-items:flex-end;
+}
+.diagram {
+    background: url(https://st2.depositphotos.com/1742172/9684/v/170/depositphotos_96847560-stock-illustration-retro-cartoon-burger.jpg);
+     /* height: 200px;  */
+    bottom: 0;
+    width:150px; 
+    border: 1px brown solid;
+    border-radius: 50px 50px 0 0;
+    margin: 20px 20px 0px 20px; 
+    flex-direction: row;
+    justify-content:space-around;
+    transition: 1s ease-out;
+}

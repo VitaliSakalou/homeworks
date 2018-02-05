@@ -22,7 +22,7 @@ class TableRow extends  React.PureComponent {
 
     changeColor=(EO)=>{
         EO.stopPropagation();
-        console.log(EO.currentTarget.id);
+        //console.log(EO.currentTarget.id);
         this.props.cbCloseEdit();
         this.props.cbColorFunc(EO.currentTarget.id);
         this.props.cbCancel();
@@ -35,12 +35,13 @@ class TableRow extends  React.PureComponent {
 
     deleteProduct=(EO)=>{
          EO.stopPropagation();
-        this.props.cbDeleteElement(EO.currentTarget.id);
-        this.props.cbColorFunc(null);
-        console.log(EO.currentTarget.id);
+         this.props.cbDeleteElement(EO.currentTarget.id);
+         this.props.cbColorFunc(null);
+        //console.log(EO.currentTarget.id);
     };
 
     render() {
+        console.log("Строки с данными - render"+this.props.id);
         let color= '';
         let btn = false;
         if (this.props.selectedElement === this.props.id){

@@ -14,46 +14,70 @@ class CardProduct extends  React.PureComponent {
         this.props.cbCloseEdit();
     };
 
+    url = null;
+    name = null;
+    price = null;
+    count = null;
+
+    getUrl = (ref) => {
+        this.url = ref;
+    };
+
+    getName = (ref) => {
+        this.name = ref;
+    };
+
+    getPrice = (ref) => {
+        this.price = ref;
+    };
+
+    getCount = (ref) => {
+        this.count = ref;
+    };
+
 
     saveEdit =()=>{
-        let arr = [];
-        if(this.refs.url.value=="") {
-            this.props.cbFalseValidation("urlValid");
-            arr.push('url error');
-        }else{
-            this.props.cbTrueValidation("urlValid");
-        }
-        if(this.refs.name.value=="") {
-            this.props.cbFalseValidation("nameValid");
-            arr.push('name error');
-        }else{
-            this.props.cbTrueValidation("nameValid");
-        }
-        if(this.refs.price.value=="" || !isFinite(this.refs.price.value)) {
-            this.props.cbFalseValidation("priceValid");
-            arr.push('price error');
-        }else{
-            this.props.cbTrueValidation("priceValid");
-        }
-        if(this.refs.count.value=="" || !isFinite(this.refs.count.value)) {
-            this.props.cbFalseValidation("countValid");
-            arr.push('count error');
-        }else{
-            this.props.cbTrueValidation("countValid");
-        }
-        console.log(arr);
-        if(arr.length){
-            return;
-        }
-        let url= this.refs.url.value;
-        let name= this.refs.name.value;
-        let price= parseInt(this.refs.price.value);
-        let count= parseInt(this.refs.count.value);
+        if (this.url && this.name && this.price && this.count){               //проверка есть ли ссылка
+            let arr = [];
+            let url = this.url.value;
+            let name = this.name.value;
+            let price= parseInt(this.price.value);
+            let count= parseInt(this.count.value);
+    
+            if(url=="") {
+                this.props.cbFalseValidation("urlValid");
+                arr.push('url error');
+            }else{
+                this.props.cbTrueValidation("urlValid");
+            }
+            if(name=="") {
+                this.props.cbFalseValidation("nameValid");
+                arr.push('name error');
+            }else{
+                this.props.cbTrueValidation("nameValid");
+            }
+            if(price=="" || !isFinite(price)) {
+                this.props.cbFalseValidation("priceValid");
+                arr.push('price error');
+            }else{
+                this.props.cbTrueValidation("priceValid");
+            }
+            if(count=="" || !isFinite(count)) {
+                this.props.cbFalseValidation("countValid");
+                arr.push('count error');
+            }else{
+                this.props.cbTrueValidation("countValid");
+            }
+            //console.log(arr);
+            if(arr.length){
+                return;
+            }  
         let id = this.props.id;
         let code = this.props.code;
-        console.log(typeof(url),name,price,typeof(count), id,code);
+        //console.log(typeof(url),name,price,typeof(count), id,code);
         this.props.cbEditElement(url, name, price, count, id, code);
         this.props.cbCloseEdit();
+        }
     };
 
     stopPropagation=(EO)=>{
@@ -62,6 +86,7 @@ class CardProduct extends  React.PureComponent {
 
 
     render() {
+        console.log("Карта продукта - render");
         return(
             <div className="cardProduct" onClick={this.stopPropagation}>
                 <ul>
@@ -69,7 +94,7 @@ class CardProduct extends  React.PureComponent {
                         (this.props.edit)
                             ?
                             <div>
-                                <input defaultValue={this.props.url} ref="url"/>
+                                <input defaultValue={this.props.url} ref={this.getUrl}/>
                                 {
                                     (this.props.urlValid) &&
                                     <span>Введите корректный URL</span>
@@ -82,7 +107,7 @@ class CardProduct extends  React.PureComponent {
                         (this.props.edit)
                             ?
                             <div>
-                            <input defaultValue={this.props.name} ref="name"/>
+                            <input defaultValue={this.props.name} ref={this.getName}/>
                                 {
                                     (this.props.nameValid) &&
                                     <span>Введите корректное имя</span>
@@ -95,7 +120,7 @@ class CardProduct extends  React.PureComponent {
                         (this.props.edit)
                             ?
                             <div>
-                            <input defaultValue={this.props.price} ref="price"/>
+                            <input defaultValue={this.props.price} ref={this.getPrice}/>
                                 {
                                     (this.props.priceValid) &&
                                     <span>Введите корректную цену</span>
@@ -108,7 +133,7 @@ class CardProduct extends  React.PureComponent {
                         (this.props.edit)
                             ?
                             <div>
-                            <input defaultValue={this.props.count} ref="count"/>
+                            <input defaultValue={this.props.count} ref={this.getCount}/>
                                 {
                                     (this.props.countValid) &&
                                     <span>Введите корректное колличество</span>

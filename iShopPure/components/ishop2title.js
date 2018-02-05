@@ -8,6 +8,7 @@ class ShopTitle extends  React.PureComponent {
     };
 
     render(){
+        console.log("Title - render");
         return  <div className='title'>
                      {this.props.title}
                 </div>

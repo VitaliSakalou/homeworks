@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding:0;
+  }
+.PageLink {
+    margin: 20px 50px;
+    transition: .4s;
+}
+.PageLink:hover {
+    box-shadow:10px 10px 10px rgba(0, 0, 0, 0.3), 0 10px 40px rgba(0, 0, 0, 0.1) inset;
+    transform: scale(1.02);
+    transition: .4s;
+}
+.PageLink:active {
+    transform: scale(1.0);
+    transition: .05s;
+    box-shadow:none;
+}
+.PageLinkLogo {
+    text-align: center;
+}
+.Logo {
+    height: 400px;
+}
+.LinksBlock {
+    text-align: center;
+    padding: 20px 0 0 0;
+}
+.ActivePageLink {
+    color: red;
+}
+.Loader {
+    position: absolute;
+    left: 0;
+    top:0;
+    background-color: rgba(53, 54, 54, .5);
+    height: 100vh;
+    width: 100vw;
+}
+.LoaderItem {
+    position: absolute;
+    width: 50px; 
+    left: 50%;
+    top:50%;
+    margin: -90px 0 0 -90px; 
+    text-align: center;
+}
+.MainPage {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("/../img/logo/background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+@media screen and (max-width: 750px) {
+    .Logo {
+        height: 300px;
+    }
+}

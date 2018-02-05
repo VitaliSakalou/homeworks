@@ -5,6 +5,10 @@ import PriceOfCarsBlock from './ishop';
 
 class DemoPage extends React.PureComponent {
 
+    static propTypes = {
+        products: PropTypes.array,  
+    };
+
     titleOfPrice='Price list';
     selectedColor = 'grey';
     state = {
@@ -13,22 +17,40 @@ class DemoPage extends React.PureComponent {
 
 
     addElement=(url,name,price,count)=>{
-        console.log(url,name,price,count);
         if (this.state.productsArr.length ==0){
-            this.state.productsArr.push({name, code:1, price, url, count, height: 100}); //ES6
+            this.state.productsArr.push({name, code:1, price, url, count, height: 50}); //ES6
         }else{
-            this.state.productsArr.push({name, code:this.state.productsArr[this.state.productsArr.length-1].code+1, price, url, count, height: 100}); //ES6
+            this.state.productsArr.push({name, code:this.state.productsArr[this.state.productsArr.length-1].code+1, price, url, count, height: 50}); //ES6
         }
-        this.setState({productsArr:this.state.productsArr.slice(),});
-        console.log(this.state.productsArr);
+        //this.setState({productsArr:this.state.productsArr.slice(),});
+        this.setState({productsArr:[...this.state.productsArr],});
+        //console.log(this.state.productsArr);
     };
 
     editElement=(url, name, price, count, id, code)=>{
-        console.log(url, name, price, count, id, code);
-        this.state.productsArr.splice(id,1,{name, code, price, url, count, height: 100});//ES6
-        this.setState({productsArr:this.state.productsArr.slice(),});
+        let newArr = [...this.state.productsArr];
+        newArr.forEach( (c,i) => {
+            // if ( c.id==clientId ) {
+            if (i == id ) {
+              let newRow={...c}; // копия хэша изменившейся строки
+              newRow.name=name;
+              newRow.url=url;
+              newRow.price=price;
+              newRow.count=count;
+              newRow.code=code;
+              newArr[i]=newRow;
+            }
+          } );
+        this.setState({productsArr:newArr,});
         console.log(this.state.productsArr);
     };
+
+    // editElement=(url, name, price, count, id, code)=>{
+    //     //console.log(url, name, price, count, id, code);
+    //     this.state.productsArr.splice(id,1,{name, code, price, url, count, height: 50});//ES6
+    //     this.setState({productsArr:this.state.productsArr,});
+    //     //console.log(this.state.productsArr);
+    // };
 
     deleteElement=(id)=>{
         function FF(V,I,A) {
@@ -38,9 +60,9 @@ class DemoPage extends React.PureComponent {
                 return true;
             }
         }
-        this.state.productsArr = this.state.productsArr.filter(FF);
-        this.setState({productsArr:this.state.productsArr.slice(),});
-        console.log(this.state.productsArr);
+        let newArr = this.state.productsArr.filter(FF);
+        this.setState({productsArr:newArr,});
+        //console.log(this.state.productsArr);
     };
 
     headArr= {
@@ -48,10 +70,13 @@ class DemoPage extends React.PureComponent {
     };
 
     render() {
+        console.log("AlliShop - render");
+        console.log(this.state.productsArr);
         return (
             <div><PriceOfCarsBlock cbEditElement={this.editElement} cbAddElement={this.addElement}
                                    cbDeleteElement={this.deleteElement} title={this.titleOfPrice} selectedColor={this.selectedColor}
-                                   products={this.state.productsArr} head={this.headArr}/></div>
+                                   products={this.state.productsArr} head={this.headArr}/>
+            </div>
         );
     }
 
