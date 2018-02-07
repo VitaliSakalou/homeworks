@@ -6,6 +6,7 @@ import FoodGrafics from '../FoodGrafics/FoodGrafics';
 import Table from '../Table/Table';
 import { NavLink } from 'react-router-dom';
 
+import './RestaurantComponent.css';
 
 class intRestaurantComponent extends React.PureComponent {
 
@@ -16,14 +17,22 @@ class intRestaurantComponent extends React.PureComponent {
   render() {  
     return(
       <div className = {"RestaurantComponent"}>
-      <div>
-        <NavLink to="/" className="PageLink" activeClassName="ActivePageLink">Главная</NavLink>
-        <NavLink to="/McDonalds" className="PageLink" activeClassName="ActivePageLink">McDonalds</NavLink>
-        <NavLink to="/BurgerKing" className="PageLink" activeClassName="ActivePageLink">BurgerKing</NavLink>
+        <div className = {"LinksBlock"}>
+          <NavLink to="/" className="PageLink" activeClassName="ActivePageLink">
+             <span className="backgroundMain"><img className="PageLink" src = {"../../img/logo/MAINW.png"}/></span>
+          </NavLink>
+          <NavLink to="/McDonalds" className="PageLink" activeClassName="ActivePageLinkMc">
+            <span className="backgroundMC"><img className="PageLink" src = {"../../img/logo/MCLOGOW.png"}/></span>
+          </NavLink>
+          <NavLink to="/BurgerKing" className="PageLink" activeClassName="ActivePageLinkBk">
+              <span className="backgroundBK"><img className="PageLink" src = {"../../img/logo/BKLOGOB.png"}/></span>
+          </NavLink>
         </div>
-        <ListOfFood/>
-        <Table/>
-        <FoodGrafics/>
+        {/* <div className="BlockOfListTableGrafics"> */}
+          <ListOfFood/>
+          <Table/>
+          <FoodGrafics/>
+        {/* </div> */}
       </div>
     );
 

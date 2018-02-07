@@ -15,9 +15,9 @@
   cursor: pointer;
 }
 .foodImage {
-  height: 40vh;
-  min-height: 200px;
-  background-image: radial-gradient(#30989c 0%, #0d3334 100%);
+  text-align: center;
+  min-height: 40vh;
+  background: radial-gradient(#30989c 0%, #0d3334 100%);
   margin-left: 400px;
 }
 .foodName {
@@ -55,4 +55,12 @@
   color: red;
   font-size: 30px;
   font-family: 'BrushType-SemiBold', arial;
+}
+
+@media screen and (max-width: 768px) {
+  .foodImage {
+    min-height: 40vh;
+    background: radial-gradient(#30989c 0%, #0d3334 100%);
+    margin-left: 0;
+  }
 }

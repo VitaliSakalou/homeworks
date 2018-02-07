@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 
 
 import Grafics from './Grafics/Grafics';
+
 import Highcharts from 'highcharts';
 import ReactHighcharts from 'react-highcharts';
 import highcharts3d from 'highcharts-3d';
@@ -74,6 +75,24 @@ class intFoodGrafics extends React.PureComponent {
     // }
   }
 
+  getElementWidth = () => {
+      let width = null;
+      if (document.documentElement.clientWidth > 768){
+        width = document.documentElement.clientWidth-400;
+      } else {
+        width = document.documentElement.clientWidth;
+      }
+      let height = null;
+      height = document.documentElement.clientHeight-.4*document.documentElement.clientHeight-100;
+      return (width, height);
+  }
+
+  getElementHeight = () => {
+    let height = null;
+    height = document.documentElement.clientHeight-.4*document.documentElement.clientHeight-100;
+    return height;
+}
+
   handler = () => {
     console.log(this.state.g_config.series[0]);
     this.state.g_config.series[0].data[0] = this.state.g_config.series[0].data[0]+99;
@@ -114,8 +133,8 @@ class intFoodGrafics extends React.PureComponent {
         backgroundColor: '#590d0e',
         color: '#e86604',
         type: 'column',
-        height: document.documentElement.clientHeight-.45*document.documentElement.clientHeight,
-        width: document.documentElement.clientWidth-400,
+         height: document.documentElement.clientHeight-.4*document.documentElement.clientHeight-100,
+        // width: this.getElementHeight(),
         options3d: {
             enabled: true,
             alpha: 5,
@@ -126,7 +145,6 @@ class intFoodGrafics extends React.PureComponent {
     title: {
         text: 'Пищевая ценность продукта',
         style: { "color": "white", "fontSize": "30px", "font-family":"'BrushType-SemiBold', arial;" },
-
     },
     subtitle: {
         text: 'Суммарное количество калорий, белков, жиров и углеводов',
@@ -140,7 +158,10 @@ class intFoodGrafics extends React.PureComponent {
     },
     responsive:{
       rules:{
-        maxHeight: 200,
+        condition:{
+          callback: this.getElementWidth(),
+        },
+        // maxHeight: 200,
       },
     },
     xAxis: {
@@ -159,6 +180,7 @@ class intFoodGrafics extends React.PureComponent {
             text: null
         },
         labels: {
+          skew3d: true,
           style: {
             fontSize: '24px',
             color: 'white',

@@ -2,33 +2,54 @@
     margin: 0;
     padding:0;
   }
-.PageLink {
-    margin: 20px 50px;
-    transition: .4s;
+.LinksBlock {
+    /* position: fixed;
+    top:0;
+    z-index: 99;*/
+    width: 100%; 
+    background-color: #34332f;
+    height: 100px;
+    display: flex;
+    justify-content:space-around;
 }
-.PageLink:hover {
-    box-shadow:10px 10px 10px rgba(0, 0, 0, 0.3), 0 10px 40px rgba(0, 0, 0, 0.1) inset;
-    transform: scale(1.02);
-    transition: .4s;
+.ActivePageLinkMain {
+    background-color: rgb(4, 167, 99);
 }
-.PageLink:active {
-    transform: scale(1.0);
-    transition: .05s;
-    box-shadow:none;
+.ActivePageLinkMc {
+    background-color: #FEC940;
+}
+.ActivePageLinkBk {
+    background-color: #EF1C25;
+}
+
+.backgroundMC,
+.backgroundBK  {
+    transition: .5s;
+    display: inline-block;
+}
+.backgroundMC:hover {
+    display: inline-block;
+    background-color: #FEC940;
+    transition: .5s;
+}
+.backgroundBK:hover {
+    display: inline-block;
+    background-color: #EF1C25;
+    transition: .5s;
+}
+.backgroundMain:hover{
+    display: inline-block;
+    background-color: rgb(4, 167, 99);
+    transition: .5s;
 }
 .PageLinkLogo {
     text-align: center;
 }
 .Logo {
-    height: 400px;
+    padding: 50px 0 0 0;
+    height: 100%;
 }
-.LinksBlock {
-    text-align: center;
-    padding: 20px 0 0 0;
-}
-.ActivePageLink {
-    color: red;
-}
+
 .Loader {
     position: absolute;
     left: 0;
@@ -48,12 +69,13 @@
 .MainPage {
     height: 100vh;
     width: 100vw;
-    background-image: url("/../img/logo/background.jpg");
+    background: radial-gradient(#30989c 0%, #0d3334 100%);
     background-size: cover;
     background-position: center;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
     .Logo {
-        height: 300px;
+        padding: 100px 0 0 0;
+        height: 50vh;
     }
 }

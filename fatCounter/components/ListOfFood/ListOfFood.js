@@ -71,7 +71,7 @@ class intListOfFood extends React.PureComponent {
            <div className = "listBlock">
            <ModalWindow/>
                 <input className={"input"} type = {"text"} onChange = {this.searchFood} placeholder="Поиск"/>
-                <ul className="list rounded">
+                <ul className="list rounded" style = {{height: document.documentElement.clientHeight-100-54}}>
                   {arr.filter(V => V.name.toLowerCase().indexOf(this.state.string) > -1).map( V =>
                   {  let checked = "";
                       let visible = "";

@@ -39,10 +39,12 @@ class intModalWindow extends React.PureComponent {
     let className = '';
     let id = null;
     let src = '';
+    let description = '';
     {arr.some((item, index) => {if (item.modal){
         className = '_view';
         id = item.code;
         src = item.img;
+        description = item.description;
        }
       }
     )
@@ -50,8 +52,7 @@ class intModalWindow extends React.PureComponent {
 return (
 <div className = {"ModalWindow"+className} onClick = {this.viewModalWindow} data-identifier = {id}>
 <img className = {'ModalImage'} src = {"../../img/"+src+".png"}/>
-<p className = {'ModalDescription'}>ВОППЕР® — это вкуснейшая приготовленная на огне 100% говядина с сочными помидорами, свежим нарезанным листовым салатом, 
-  густым майонезом, хрустящими маринованными огурчиками и рубленым белым луком на нежной булочке с кунжутной посыпкой.</p>
+<p className = {'ModalDescription'}>{description}</p>
 </div>
 )
  }

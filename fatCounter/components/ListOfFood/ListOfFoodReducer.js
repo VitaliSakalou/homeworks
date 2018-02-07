@@ -39,7 +39,7 @@ function ProductsReducer(state=initState, action) {
                 count = 0;
               }
           }
-           return {name:V.name, calories:V.calories, proteins:V.proteins, fats:V.fats, carbohydrates:V.carbohydrates, code:V.code, checked, count, img:V.img, modal:V.modal}
+           return {name:V.name, calories:V.calories, proteins:V.proteins, fats:V.fats, carbohydrates:V.carbohydrates, code:V.code, checked, count, img:V.img, modal:V.modal, description:V.description}
            })
           ]
       };
@@ -72,7 +72,7 @@ function ProductsReducer(state=initState, action) {
                 checked = false;
               }
           }
-           return {name:V.name, calories:V.calories, proteins:V.proteins, fats:V.fats, carbohydrates:V.carbohydrates, code:V.code, checked, count, img:V.img, modal:V.modal}
+           return {name:V.name, calories:V.calories, proteins:V.proteins, fats:V.fats, carbohydrates:V.carbohydrates, code:V.code, checked, count, img:V.img, modal:V.modal, description:V.description}
            })
           ]
       };
@@ -109,9 +109,8 @@ function ProductsReducer(state=initState, action) {
             let modal = V.modal;
             if (V.code == action.id){
               modal = !modal;
-              console.log("hhhhhhhhhhhhhh",modal);
           }
-           return {name:V.name, calories:V.calories, proteins:V.proteins, fats:V.fats, carbohydrates:V.carbohydrates, code:V.code, checked:V.checked, count:V.count, img:V.img, modal}
+           return {name:V.name, calories:V.calories, proteins:V.proteins, fats:V.fats, carbohydrates:V.carbohydrates, code:V.code, checked:V.checked, count:V.count, img:V.img, modal, description:V.description}
            })
           ]
       };

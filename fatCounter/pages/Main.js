@@ -1,26 +1,33 @@
 "use strict";
 
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { NavLink, withRouter } from 'react-router-dom';
 
 import './PagesLinks.css';
 
-class Main extends React.PureComponent {
+class intMain extends React.PureComponent {
 
   render() {
     return (
       <div className = {"MainPage"}>
         <div className = {"LinksBlock"}>
-          {/* <NavLink to="/"  activeClassName="ActivePageLink"><img className="PageLink" src = {"../img/logo/main.jpg"}/></NavLink> */}
-          <NavLink to="/McDonalds"  activeClassName="ActivePageLink"><img className="PageLink" src = {"../img/logo/mclogo.jpg"}/></NavLink>
-          <NavLink to="/BurgerKing"  activeClassName="ActivePageLink"><img className="PageLink" src = {"../img/logo/bklogo.jpg"}/></NavLink>
-        </div>
-        <div className="PageLinkLogo"><img className="Logo" src = {"../img/logo/logo.png"}/></div>
+          <NavLink to="/" exact className="PageLink" activeClassName="ActivePageLinkMain">
+              <span className="backgroundMain"><img className="PageLink" src = {"../../img/logo/MAINW.png"}/></span>
+          </NavLink>
+          <NavLink to="/McDonalds" className="PageLink" activeClassName="ActivePageLinkMain">
+            <span className="backgroundMC"><img className="PageLink" src = {"../../img/logo/MCLOGOW.png"}/></span>
+          </NavLink>
+          <NavLink to="/BurgerKing" className="PageLink" activeClassName="ActivePageLinkMain">
+              <span className="backgroundBK"><img className="PageLink" src = {"../../img/logo/BKLOGOB.png"}/></span>
+          </NavLink>
+         </div>
+        <div className="PageLinkLogo"><img className="Logo" src = {"../img/logo/mainLOGOF.png"}/></div>
       </div>
     );
 
   }
 
 }
-
+const Main = withRouter(intMain);
 export default Main;
