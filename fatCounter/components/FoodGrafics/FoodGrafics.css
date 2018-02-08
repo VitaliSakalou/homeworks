@@ -20,7 +20,20 @@
 .graficsBlockMain {
   margin: 0 0 0 400px;
 }
-
+.graficsValue {
+  color: white;
+  font-family: 'BrushType-SemiBold', arial;
+  font-size: 30px;
+  display: flex;
+  justify-content:space-around;
+  height: 40px;
+}
+.graficsValue span {
+  display: inline-block;
+}
+.warning {
+  color: red;
+}
 
 /*Стили для HightCharts*/
 #containerHightCharts, #sliders {

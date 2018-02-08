@@ -21,7 +21,9 @@ class intPagesRouter extends React.Component {
 
   componentDidMount= () => {
     let fetchError = (errorMessage) => {
-      // console.error(showStr);
+      // let initState=require('../../Foods.json');
+      // this.props.dispatch(this.props.data_Request(initState));
+      //  console.error(showStr);
     };
   
     let fetchSuccess = (loadedData) => {
@@ -76,7 +78,7 @@ class intPagesRouter extends React.Component {
     return (
           <div>
             <Route exact path="/" component={MainPage} />
-            <Route path="/mcdonalds"  component={MainPageMcDonalds} />
+            <Route path="/McDonalds"  component={MainPageMcDonalds} />
             <Route path="/BurgerKing"  component={MainPageBurgerKing} />
           </div>
     );

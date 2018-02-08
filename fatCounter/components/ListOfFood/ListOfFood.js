@@ -54,7 +54,7 @@ class intListOfFood extends React.PureComponent {
     this.setState({string:e.target.value.toLowerCase(),});
   }
 
-  render() {  
+  arrDefinder = () =>  {
     let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
     let arr = null;
     switch ( url ) {
@@ -67,9 +67,16 @@ class intListOfFood extends React.PureComponent {
       default:
         alert('неизвестная страница');
     }
+    return arr;
+  }
+
+  render() {  
+    let arr = this.arrDefinder();
     let list = (
            <div className = "listBlock">
+           { ( arr.some((item, index) => {if (item.modal){return true;}})) &&
            <ModalWindow/>
+           }
                 <input className={"input"} type = {"text"} onChange = {this.searchFood} placeholder="Поиск"/>
                 <ul className="list rounded" style = {{height: document.documentElement.clientHeight-100-54}}>
                   {arr.filter(V => V.name.toLowerCase().indexOf(this.state.string) > -1).map( V =>

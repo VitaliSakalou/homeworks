@@ -15,7 +15,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 require ('es6-promise').polyfill();
 
 import PagesRouter from './pages/PagesRouter';
-import PagesLinks from './pages/PagesLinks';
 import Main from './pages/Main';
 
   let store=createStore(

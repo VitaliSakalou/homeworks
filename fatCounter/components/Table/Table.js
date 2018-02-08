@@ -22,7 +22,7 @@ class intTable extends React.PureComponent {
     this.props.dispatch( view_modal_window(e.currentTarget.dataset.identifier, url) );
   };
 
-  render() {  
+  arrayDefinder = () => {
     let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
     let arr = null;
     switch ( url ) {
@@ -35,6 +35,12 @@ class intTable extends React.PureComponent {
       default:
         alert('неизвестная страница');
     }
+    return arr;
+  }
+
+
+  render() {  
+   let arr = this.arrayDefinder();
     let grafics = (
           <div className={"foodImage"}>
               {arr.map((item, index) => {if (item.checked){
@@ -47,7 +53,6 @@ class intTable extends React.PureComponent {
                   <ImgFood key = {item.code} src = {item.img} data_identifier = {item.code} 
                            count = {item.count} invisible = {invisible} code = {item.code} 
                            cbViewModalWindow = {this.viewModalWindow} name = {item.name}/>
-                       
                          )
               }})
               }

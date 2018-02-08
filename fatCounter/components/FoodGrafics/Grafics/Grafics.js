@@ -2,7 +2,6 @@
 import PropTypes from 'prop-types';
 
 
-
 class Grafics extends React.PureComponent {
 
   static propTypes = {
@@ -13,8 +12,8 @@ class Grafics extends React.PureComponent {
   render() {  
     // console.log("render", this.props.height);
     let grafics = (
-              <div className = {"grafic"} style={{height: this.props.height}}>{this.props.value}</div>
-    );
+                    <div className = {"grafic"} style={{height: this.props.height}}>{this.props.value}</div>
+                  );
     return grafics;
   }
 }

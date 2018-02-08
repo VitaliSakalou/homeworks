@@ -5,7 +5,6 @@ import { CHECK_PRODUCT, CHANGECOUNT_PRODUCT, DATA_REQUEST, VIEW_MODAL_WINDOW } f
 let initState={data: false};
 console.log(initState);
 
-
 // в редьюсере state - это не весь state Redux, а только тот раздел state,
 // за который отвечает данный редьюсер
 
@@ -123,6 +122,5 @@ function ProductsReducer(state=initState, action) {
       return state;
   }
 }
-
 
 export default ProductsReducer;

@@ -8,54 +8,64 @@ import './ModalWindow.css';
 
 class intModalWindow extends React.PureComponent {
 
-  static propTypes = {
-    products: PropTypes.object,
-  };
+    static propTypes = {
+      products: PropTypes.object,
+    };
 
-   state = {
+    state = {
 
-  }
-
-  viewModalWindow = (e) => {
-    let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
-    console.log(e.currentTarget.dataset.identifier);
-    console.log(url);
-    this.props.dispatch( view_modal_window(e.currentTarget.dataset.identifier, url) );
-  };
-
-  render() {  
-    let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
-    let arr = null;
-    switch ( url ) {
-      case 'mcdonalds':
-      arr = this.props.products.mcdonalds;
-        break;
-      case 'burgerking':
-      arr = this.props.products.burgerking;
-        break;
-      default:
-        alert('неизвестная страница');
     }
-    let className = '';
-    let id = null;
-    let src = '';
-    let description = '';
-    {arr.some((item, index) => {if (item.modal){
-        className = '_view';
-        id = item.code;
-        src = item.img;
-        description = item.description;
-       }
+
+    viewModalWindow = (e) => {
+      let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
+      console.log(e.currentTarget.dataset.identifier);
+      console.log(url);
+      this.props.dispatch( view_modal_window(e.currentTarget.dataset.identifier, url) );
+    };
+
+    arrDefinder = () => {
+      let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
+      let arr = null;
+      switch ( url ) {
+        case 'mcdonalds':
+        arr = this.props.products.mcdonalds;
+          break;
+        case 'burgerking':
+        arr = this.props.products.burgerking;
+          break;
+        default:
+          alert('неизвестная страница');
       }
-    )
-   }
-return (
-<div className = {"ModalWindow"+className} onClick = {this.viewModalWindow} data-identifier = {id}>
-<img className = {'ModalImage'} src = {"../../img/"+src+".png"}/>
-<p className = {'ModalDescription'}>{description}</p>
-</div>
-)
- }
+      return arr;
+    }
+
+    dataDefinder = (arr) => {
+      let classView = '';
+      let id = null;
+      let src = '';
+      let description = '';
+      {arr.some((item, index) => {if (item.modal){
+          classView = '_view';
+          id = item.code;
+          src = item.img;
+          description = item.description;
+          }
+          }
+        )
+      }
+      return {classView, id, src, description};
+    }
+
+    render() {  
+      let arr = this.arrDefinder();
+      let dataArr = this.dataDefinder(arr);
+      return (
+      <div className = {"ModalWindow"+dataArr.classView} onClick = {this.viewModalWindow} data-identifier = {dataArr.id}>
+        <img className = {'ModalImage'} src = {"/./img/"+dataArr.src+".png"}/>
+        <p className = {'ModalDescription'}>{dataArr.description}</p>
+      </div>
+      )
+  }
 }
 
 const mapStateToProps = function (state) {

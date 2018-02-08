@@ -33,19 +33,18 @@ class ItemFood extends React.PureComponent {
   }
 
   render() {  
-    // console.log("render", this.props.code);
+     console.log("render", this.props.code);
         return (<li className={"item "+this.props.checked}
                                                  key = {this.props.code} 
                                                  onClick={this.checkProduct} 
                                                  data-identifier={this.props.data_identifier}>
-             <img className = {"imageInList"} src = {"../../../img/"+this.props.src+".png"}/>
-              <span className = {"itemNameOfProduct"}>{this.props.name}</span> 
-              <span className = {"btn"+this.props.visible}>
-                  <button className = {"btnBody"} data-identifier={this.props.data_identifier} onClick = {this.minusProduct}>-</button>
-                  <button className = {"btnBody"} data-identifier={this.props.data_identifier} onClick = {this.plusProduct}>+</button>
-              </span>
-            
-         </li>)
+                  <img className = {"imageInList"} src = {"/./img/"+this.props.src+".png"}/>
+                  <span className = {"itemNameOfProduct"}>{this.props.name}</span> 
+                  <span className = {"btn"+this.props.visible}>
+                      <button className = {"btnBody"} data-identifier={this.props.data_identifier} onClick = {this.minusProduct}>-</button>
+                      <button className = {"btnBody"} data-identifier={this.props.data_identifier} onClick = {this.plusProduct}>+</button>
+                  </span>
+                </li>)
   }
 
 }

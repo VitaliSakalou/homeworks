@@ -13,13 +13,13 @@
     justify-content:space-around;
 }
 .ActivePageLinkMain {
-    background-color: rgb(4, 167, 99);
+    background-color: #E22B2E;
 }
 .ActivePageLinkMc {
     background-color: #FEC940;
 }
 .ActivePageLinkBk {
-    background-color: #EF1C25;
+    background-color: #254195;
 }
 
 .backgroundMC,
@@ -34,12 +34,12 @@
 }
 .backgroundBK:hover {
     display: inline-block;
-    background-color: #EF1C25;
+    background-color: #254195;
     transition: .5s;
 }
 .backgroundMain:hover{
     display: inline-block;
-    background-color: rgb(4, 167, 99);
+    background-color:#E22B2E;
     transition: .5s;
 }
 .PageLinkLogo {

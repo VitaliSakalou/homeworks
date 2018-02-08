@@ -25,15 +25,14 @@ class ImgFood extends React.PureComponent {
   };
 
   render() {  
-    // console.log("render", this.props.name);
+    console.log("render", this.props.name);
     return (
                <span className = {"imageBlock"} onClick={this.viewModalWindow} data-identifier={this.props.data_identifier}>
-                  <img className = {"image"} src = {"../../../img/"+this.props.src+".png"}/>
+                  <img className = {"image"} src = {"/./img/"+this.props.src+".png"}/>
                   <span className = {"foodCount_"+this.props.invisible}>
-                    <span className = {"x_count_"+this.props.invisible}>x{this.props.count}</span>
+                      <span className = {"x_count_"+this.props.invisible}>x{this.props.count}</span>
                   </span>
                   <span className = {"foodName"}>{this.props.name}</span>
-                   
                 </span>
      );
   }

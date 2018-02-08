@@ -37,7 +37,6 @@ const view_modal_window = (id, url) => {
           }
 }
 
-
 export {
   check_Product,CHECK_PRODUCT,
   changeCount_Product,CHANGECOUNT_PRODUCT,

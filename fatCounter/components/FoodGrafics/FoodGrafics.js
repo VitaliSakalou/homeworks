@@ -8,8 +8,6 @@ import Grafics from './Grafics/Grafics';
 import Highcharts from 'highcharts';
 import ReactHighcharts from 'react-highcharts';
 import highcharts3d from 'highcharts-3d';
-// import 'highcharts/modules/higcharts-3d';
-// require('highcharts-3d')(ReactHighcharts.Highcharts);
 highcharts3d(ReactHighcharts.Highcharts);
 
 import './FoodGrafics.css';
@@ -20,60 +18,6 @@ class intFoodGrafics extends React.PureComponent {
   static propTypes = {
     products: PropTypes.object,
   };
-
-
-
-   state = {
-    // g_config: {chart: {
-    //       type: 'column',
-    //       height: 400,
-    //       width: 400,
-          
-    //       options3d: {
-    //           enabled: true,
-              
-    //           alpha: 10,
-    //           beta: 25,
-    //           depth: 70
-    //       }
-    //   },
-    //   title: {
-    //       text: '3D chart with null values'
-    //   },
-    //   subtitle: {
-    //       text: 'Notice the difference between a 0 value and a null point'
-    //   },
-    //   plotOptions: {
-    //       column: {
-    //           depth: 25
-    //       }
-    //   },
-    //   responsive:{
-    //     rules:{
-    //       maxHeight: 200,
-    //     },
-    //   },
-    //   xAxis: {
-    //       categories: Highcharts.getOptions().lang.shortMonths,
-    //       labels: {
-    //           skew3d: true,
-    //           style: {
-    //               fontSize: '16px'
-    //           }
-    //       }
-    //   },
-    //   yAxis: {
-    //       title: {
-    //           text: null
-    //       }
-    //   },
-    //   series: [{
-    //       animation: false,
-    //       name: 'Sales',
-    //       data: [ 23, 45,  45, 34]
-    //   }] 
-    // }
-  }
 
   getElementWidth = () => {
       let width = null;
@@ -93,13 +37,15 @@ class intFoodGrafics extends React.PureComponent {
     return height;
 }
 
-  handler = () => {
-    console.log(this.state.g_config.series[0]);
-    this.state.g_config.series[0].data[0] = this.state.g_config.series[0].data[0]+99;
-    this.setState({g_config: JSON.parse(JSON.stringify(this.state.g_config))})
+  warning = (ccal) => {
+    let warning = '';
+    if (ccal > 2000){
+      warning = 'warning';
+    }
+    return warning;
   }
 
-  render() {  
+  arrayDefinder = () => {
     let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
     let arr = null;
     switch ( url ) {
@@ -112,29 +58,30 @@ class intFoodGrafics extends React.PureComponent {
       default:
         alert('неизвестная страница');
     }
-    let calories = null;
-   
-    let proteins = null;
-    let fats = null;
-    let carbohydrates = null;
-    arr.map((item, index) => {if (item.checked){
-      calories = calories + item.calories*item.count;
-      proteins = proteins + item.proteins*item.count;
-      fats = fats + item.fats*item.count;
-      carbohydrates = carbohydrates + item.carbohydrates*item.count;
-    }});
-    // if (calories !=null){
-    //   calories = calories/10;
-    // }
+    return arr;
+  }
 
-    let g_config= {
-      
-      chart: {
+  dataCounting = () => {
+    let arr = this.arrayDefinder();
+    let calories = 0;
+    let proteins = 0;
+    let fats = 0;
+    let carbohydrates = 0;
+    arr.map((item, index) => {if (item.checked){
+      calories = Math.round(calories + item.calories*item.count);
+      proteins = Math.round(proteins + item.proteins*item.count);
+      fats = Math.round(fats + item.fats*item.count);
+      carbohydrates = Math.round(carbohydrates + item.carbohydrates*item.count);
+    }});
+    return [calories, proteins, fats, carbohydrates];
+  }
+
+  highchartsBuilder = (calories, proteins, fats, carbohydrates) => {
+      return ({chart: {
         backgroundColor: '#590d0e',
         color: '#e86604',
         type: 'column',
-         height: document.documentElement.clientHeight-.4*document.documentElement.clientHeight-100,
-        // width: this.getElementHeight(),
+         height: document.documentElement.clientHeight-.4*document.documentElement.clientHeight-140,
         options3d: {
             enabled: true,
             alpha: 5,
@@ -161,7 +108,6 @@ class intFoodGrafics extends React.PureComponent {
         condition:{
           callback: this.getElementWidth(),
         },
-        // maxHeight: 200,
       },
     },
     xAxis: {
@@ -190,15 +136,28 @@ class intFoodGrafics extends React.PureComponent {
     },
     series: [{
         animation: false,
-        data: [ calories, proteins,  fats, carbohydrates]
-    }] 
-   }
+        data: [ calories, proteins, fats, carbohydrates],
+    }], 
+  }
+  )
+}
+
+  render() {  
+   let objectOfDatas = this.dataCounting();
+   // calories = calories/5;
+   let g_config= this.highchartsBuilder(...objectOfDatas);
+   
     let grafics = (
       <div className={"graficsBlockMain"}>
+            <div className={"graficsValue"}>
+              <span className = {this.warning(objectOfDatas[0])}>Калории - {objectOfDatas[0]} ккал</span>
+              <span>Белки - {objectOfDatas[1]} г</span>
+              <span>Жиры - {objectOfDatas[2]} г</span>
+              <span>Углеводы - {objectOfDatas[3]} г</span>
+            </div>
             <div id='containerHightCharts'>
-             {/* <button onClick = {this.handler}>render</button>  */}
               <ReactHighcharts config={g_config}/>
-          </div>
+             </div>
           {/* <div className={"graficsBlock"}>
             <Grafics height = {calories/10} value = {calories}/>
             <Grafics height = {proteins} value = {proteins}/>
