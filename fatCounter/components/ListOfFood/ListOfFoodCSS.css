@@ -1,12 +1,11 @@
 ﻿.list {
   background-color: rgb(54, 53, 53);
-  width: 400px;
+  width: 398px;
   /* height: 80vh; */
   overflow: scroll;
   overflow-x:hidden;
   margin: 0;
   padding: 0;  
-  border-bottom: 2px solid white;
 }
 .item {
   position: relative;
@@ -40,6 +39,7 @@
 }
 .listBlock {
   float: left;
+  border: 1px solid white;
 }
 .input {
   width: 100%;
@@ -79,7 +79,6 @@ input {
   height: 50px;
   color: white;
   border-bottom: 1px solid white;
-  border-top: 1px solid white;
 }
 input:focus {
    background-color: rgb(155, 155, 155); 

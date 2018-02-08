@@ -11,7 +11,7 @@
 }
 .imageBlock:hover {
   background-color: rgba(52, 41, 47, .5);
-  transition-duration: .8s;
+  transition-duration: .4s;
   cursor: pointer;
 }
 .foodImage {

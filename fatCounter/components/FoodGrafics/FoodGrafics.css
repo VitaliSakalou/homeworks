@@ -46,4 +46,8 @@
   .graficsBlockMain {
     margin: 0;
   }
+  .graficsValue span {
+    padding: 10px 0 0 0;
+    font-size: 16px;
+  }
 }

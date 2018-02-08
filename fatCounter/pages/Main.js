@@ -22,7 +22,11 @@ class intMain extends React.PureComponent {
               <span className="backgroundBK"><img className="PageLink" src = {"/./img/logo/BKLOGOB.png"}/></span>
           </NavLink>
          </div>
-        <div className="PageLinkLogo"><img className="Logo" src = {"/./img/logo/mainLOGOF.png"}/></div>
+        <div className="PageLinkLogo">
+          <img className="Logo" src = {"/./img/logo/mainLOGOF.png"}/>
+          <div className = {"copyRight"}>© VitaliSakalou</div>
+        </div>
+       
       </div>
     );
 

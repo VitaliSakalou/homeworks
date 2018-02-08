@@ -73,6 +73,14 @@
     background-size: cover;
     background-position: center;
 }
+.copyRight {
+    left: 0;
+    right:0;
+    color: rgb(8, 50, 51);
+    height: 30px;
+    position: fixed;
+    bottom: 5px;
+}
 @media screen and (max-width: 768px) {
     .Logo {
         padding: 100px 0 0 0;
