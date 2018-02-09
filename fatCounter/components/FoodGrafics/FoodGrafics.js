@@ -68,10 +68,10 @@ class intFoodGrafics extends React.PureComponent {
     let fats = 0;
     let carbohydrates = 0;
     arr.map((item, index) => {if (item.checked){
-      calories = Math.round(calories + item.calories*item.count);
-      proteins = Math.round(proteins + item.proteins*item.count);
-      fats = Math.round(fats + item.fats*item.count);
-      carbohydrates = Math.round(carbohydrates + item.carbohydrates*item.count);
+      calories = Math.round((calories + item.calories*item.count)*100)/100;
+      proteins = Math.round((proteins + item.proteins*item.count)*100)/100;
+      fats = Math.round((fats + item.fats*item.count)*100)/100;
+      carbohydrates = Math.round((carbohydrates + item.carbohydrates*item.count)*100)/100;
     }});
     return [calories, proteins, fats, carbohydrates];
   }

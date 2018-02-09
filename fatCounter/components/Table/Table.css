@@ -17,7 +17,8 @@
 .foodImage {
   text-align: center;
   min-height: 40vh;
-  background: radial-gradient(#30989c 0%, #0d3334 100%);
+  /* background: radial-gradient(rgb(72, 158, 107) 0%, rgb(8, 73, 34) 100%);
+  background: radial-gradient(rgb(236, 126, 127) 0%, rgb(119, 21, 23) 100%); */
   margin-left: 400px;
 }
 .foodName {

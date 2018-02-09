@@ -30,7 +30,7 @@ class intPagesRouter extends React.PureComponent {
     };
   
     let loadData = () => {
-      isoFetch("https://api.myjson.com/bins/1ef2yp", {
+      isoFetch("https://api.myjson.com/bins/gw215", {
           method: 'get',
           headers: {
               "Accept": "application/json",

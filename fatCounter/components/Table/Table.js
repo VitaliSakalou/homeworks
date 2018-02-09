@@ -25,25 +25,28 @@ class intTable extends React.PureComponent {
   arrayDefinder = () => {
     let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
     let arr = null;
+    let background = "";
     switch ( url ) {
       case 'mcdonalds':
       arr = this.props.products.mcdonalds;
+      background = 'radial-gradient(rgb(72, 158, 107) 0%, rgb(8, 73, 34) 100%)';
         break;
       case 'burgerking':
       arr = this.props.products.burgerking;
+      background = 'radial-gradient(rgb(236, 126, 127) 0%, rgb(119, 21, 23) 100%)';
         break;
       default:
         alert('неизвестная страница');
     }
-    return arr;
+    return {arr,  background};
   }
 
 
   render() {  
-   let arr = this.arrayDefinder();
+   let objectOfArrBack = this.arrayDefinder();
     let grafics = (
-          <div className={"foodImage"}>
-              {arr.map((item, index) => {if (item.checked){
+          <div className={"foodImage"} style = {{background: objectOfArrBack.background}}>
+              {objectOfArrBack.arr.map((item, index) => {if (item.checked){
                  let invisible = '';
                 if (item.count > 1){
                  invisible = 'visible';
