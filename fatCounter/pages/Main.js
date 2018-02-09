@@ -6,7 +6,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 
 import './PagesLinks.css';
 
-class intMain extends React.PureComponent {
+class intMain extends React.Component {
 
   render() {
     return (
@@ -26,7 +26,6 @@ class intMain extends React.PureComponent {
           <img className="Logo" src = {"/./img/logo/mainLOGOF.png"}/>
           <div className = {"copyRight"}>© VitaliSakalou</div>
         </div>
-       
       </div>
     );
 

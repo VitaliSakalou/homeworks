@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ListOfFood from '../ListOfFood/ListOfFood';
 import FoodGrafics from '../FoodGrafics/FoodGrafics';
 import Table from '../Table/Table';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 import './RestaurantComponent.css';
 
@@ -27,7 +27,7 @@ class intRestaurantComponent extends React.PureComponent {
           <NavLink to="/BurgerKing" className="PageLink" activeClassName="ActivePageLinkBk">
               <span className="backgroundBK"><img className="PageLink" src = {"././img/logo/BKLOGOB.png"}/></span>
           </NavLink>
-        </div>
+         </div>
           <ListOfFood/>
           <Table/>
           <FoodGrafics/>
@@ -38,4 +38,6 @@ class intRestaurantComponent extends React.PureComponent {
 
 }
 
-export default intRestaurantComponent;
+const RestaurantComponent = withRouter(intRestaurantComponent);
+
+export default RestaurantComponent;

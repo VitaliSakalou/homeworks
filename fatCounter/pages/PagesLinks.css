@@ -87,3 +87,9 @@
         height: 50vh;
     }
 }
+@media screen and (min-width: 1600px) {
+    .Logo {
+        padding: 200px 0 0 0;
+        height: 50vh;
+    }
+}

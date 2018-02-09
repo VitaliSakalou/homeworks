@@ -25,9 +25,7 @@ import Main from './pages/Main';
   ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
-        <div>
           <PagesRouter/>
-        </div>
       </BrowserRouter>
     </Provider>
     , document.getElementById('container') 

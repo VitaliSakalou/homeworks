@@ -25,10 +25,9 @@
   bottom: 0px;
   left: 10px;
   color: white;
-  font-size: 12px;
   text-align: center;
   font-family: 'BrushType-SemiBold', arial;
-  font-size: 18px;
+  font-size: 22px;
   line-height: .8;
 }
 .foodCount_ {
@@ -62,5 +61,48 @@
     min-height: 40vh;
     background: radial-gradient(#30989c 0%, #0d3334 100%);
     margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .image {
+    height: 150px;
+  }
+  .imageBlock {
+    display: inline-block; 
+    position: relative;
+    padding: 5px;
+    width: 185px;
+    height: 172px;
+    transition-duration: .8s;
+  }
+  .foodCount_visible {
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    right: -5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gold;
+  }
+  .x_count_visible {
+    display: inline-block;
+    position: absolute;
+    bottom: 5px;
+    right: 12px;
+    color: red;
+    font-size: 30px;
+    font-family: 'BrushType-SemiBold', arial;
+  }
+  .foodName {
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+    color: white;
+    text-align: center;
+    font-family: 'BrushType-SemiBold', arial;
+    font-size: 32px;
+    line-height: .8;
   }
 }

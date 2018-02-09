@@ -8,15 +8,13 @@ import { GridLoader } from 'halogenium';
 import './PagesLinks.css';
 import {data_Request} from '../components/ListOfFood/ListOfFoodAction';
 
-import MainPageMcDonalds from './MainPage';
-import MainPageBurgerKing from './MainPage';
-import MainPage from './Main';
+import Routing from './Routing';
 
-class intPagesRouter extends React.Component {
+class intPagesRouter extends React.PureComponent {
 
   static propTypes = {
      products: PropTypes.object,
-     data_Request: PropTypes.func.isRequired
+    //  data_Request: PropTypes.func.isRequired
   };
 
   componentDidMount= () => {
@@ -25,10 +23,10 @@ class intPagesRouter extends React.Component {
       // this.props.dispatch(this.props.data_Request(initState));
       //  console.error(showStr);
     };
-  
+   
     let fetchSuccess = (loadedData) => {
       console.log("load",loadedData);
-      this.props.dispatch(this.props.data_Request(loadedData));
+      this.props.dispatch(data_Request(loadedData));
     };
   
     let loadData = () => {
@@ -76,11 +74,7 @@ class intPagesRouter extends React.Component {
             </div>)
   }
     return (
-          <div>
-            <Route exact path="/" component={MainPage} />
-            <Route path="/McDonalds"  component={MainPageMcDonalds} />
-            <Route path="/BurgerKing"  component={MainPageBurgerKing} />
-          </div>
+          <Routing/>
     );
     
   }
@@ -94,13 +88,13 @@ const mapStateToProps = function (state) {
   };
 };
 
-const mapDispatch = function (dispatch) {
-  return {
-    data_Request: (data) => dispatch(data_Request(data)) 
-  }
-}
+// const mapDispatch = function (dispatch) {
+//   return {
+//     data_Request: (data) => dispatch(data_Request(data)) 
+//   }
+// }
 
 // https://github.com/ReactTraining/react-router/issues/4671
-const PagesRouter = withRouter(connect(mapStateToProps, mapDispatch)(intPagesRouter));
+const PagesRouter = withRouter(connect(mapStateToProps)(intPagesRouter));
     
 export default PagesRouter;
