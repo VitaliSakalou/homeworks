@@ -108,8 +108,8 @@
   background-color: rgba(52, 41, 47, .8);
   text-align: center;
   color: white;
-  font-family: 'BrushType-SemiBold', arial;
-  font-size: 30px;
+  font-family: 'Caveat Brush', cursive;
+  font-size: 24px;
 }
 .ModalImage {
   padding: 15vh 0 0 0;
@@ -139,10 +139,10 @@
 .item {
   position: relative;
   color: white;
-  font-family: 'BrushType-SemiBold', arial;
-  font-size: 30px;
+  font-family: 'Caveat Brush', cursive;
+  font-size: 24px;
   list-style: none;
-  height: 75px;
+  min-height: 100px;
   border-bottom: 1px solid #777675;
   background-color: rgb(54, 53, 53);
 }
@@ -154,10 +154,10 @@
   position: absolute;
   padding: 20px 0 0 20px;
   width: 180px;
-  line-height: .8;
+  line-height: 1;
 }
 .imageInList {
-  height: 50px;
+  height: 75px;
   padding: 10px 0 0 10px;
 }
 .checked {
@@ -183,7 +183,7 @@
 }
 .btnBody {
   color: #fdcaa3;
-  font-family: 'BrushType-SemiBold', arial;
+  font-family: 'Caveat Brush', cursive;
   font-size: 30px;
   width: 40px;
   height: 40px;
@@ -260,8 +260,8 @@ input:focus {
 }
 .graficsValue {
   color: white;
-  font-family: 'BrushType-SemiBold', arial;
-  font-size: 30px;
+  font-family: 'Caveat Brush', cursive;
+  font-size: 24px;
   display: flex;
   justify-content:space-around;
   height: 40px;
@@ -292,6 +292,7 @@ input:focus {
 .image {
   height: 100px;
 }
+
 .imageBlock {
   display: inline-block; 
   position: relative;
@@ -308,7 +309,8 @@ input:focus {
 .foodImage {
   text-align: center;
   min-height: 40vh;
-  background: radial-gradient(#30989c 0%, #0d3334 100%);
+  /* background: radial-gradient(rgb(72, 158, 107) 0%, rgb(8, 73, 34) 100%);
+  background: radial-gradient(rgb(236, 126, 127) 0%, rgb(119, 21, 23) 100%); */
   margin-left: 400px;
 }
 .foodName {
@@ -317,9 +319,9 @@ input:focus {
   left: 10px;
   color: white;
   text-align: center;
-  font-family: 'BrushType-SemiBold', arial;
-  font-size: 22px;
-  line-height: .8;
+  font-family: 'Caveat Brush', cursive;
+  font-size: 20px;
+  line-height: 1;
 }
 .foodCount_ {
   display: none;
@@ -344,7 +346,7 @@ input:focus {
   right: 10px;
   color: red;
   font-size: 30px;
-  font-family: 'BrushType-SemiBold', arial;
+  font-family: 'Caveat Brush', cursive;
 }
 
 @media screen and (max-width: 768px) {
@@ -384,7 +386,7 @@ input:focus {
     right: 12px;
     color: red;
     font-size: 30px;
-    font-family: 'BrushType-SemiBold', arial;
+    font-family: 'Caveat Brush', cursive;
   }
   .foodName {
     position: absolute;
@@ -392,7 +394,7 @@ input:focus {
     left: 10px;
     color: white;
     text-align: center;
-    font-family: 'BrushType-SemiBold', arial;
+    font-family: 'Caveat Brush', cursive;
     font-size: 32px;
     line-height: .8;
   }

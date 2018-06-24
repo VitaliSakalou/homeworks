@@ -18,8 +18,8 @@ class intModalWindow extends React.PureComponent {
 
     viewModalWindow = (e) => {
       let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
-      console.log(e.currentTarget.dataset.identifier);
-      console.log(url);
+      // console.log(e.currentTarget.dataset.identifier);
+      // console.log(url);
       this.props.dispatch( view_modal_window(e.currentTarget.dataset.identifier, url) );
     };
 

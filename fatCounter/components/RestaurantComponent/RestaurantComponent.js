@@ -18,17 +18,17 @@ class intRestaurantComponent extends React.PureComponent {
     return(
       <div className = {"RestaurantComponent"}>
         <div className = {"LinksBlock"}>
-          <NavLink to="/" className="PageLink" activeClassName="ActivePageLink">
+          <NavLink to="/" exact className="PageLink" activeClassName="ActivePageLink">
              <span className="backgroundMain"><img className="PageLink" src = {"/./img/logo/MAINW.png"}/></span>
           </NavLink>
-          <NavLink to="/McDonalds" className="PageLink" activeClassName="ActivePageLinkMc">
+          <NavLink to="/restaurantMC/mcdonalds" className="PageLink" activeClassName="ActivePageLinkMc">
             <span className="backgroundMC"><img className="PageLink" src = {"/./img/logo/MCLOGOW.png"}/></span>
           </NavLink>
-          <NavLink to="/BurgerKing" className="PageLink" activeClassName="ActivePageLinkBk">
-              <span className="backgroundBK"><img className="PageLink" src = {"././img/logo/BKLOGOB.png"}/></span>
+          <NavLink to="/restaurantBK/burgerking" className="PageLink" activeClassName="ActivePageLinkBk">
+              <span className="backgroundBK"><img className="PageLink" src = {"/./img/logo/BKLOGOB.png"}/></span>
           </NavLink>
          </div>
-          <ListOfFood/>
+          <ListOfFood nameOfRestaurant = {this.props.match.params.nameOfRestaurant}/>
           <Table/>
           <FoodGrafics/>
       </div>

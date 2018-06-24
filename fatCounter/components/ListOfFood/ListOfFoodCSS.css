@@ -10,8 +10,8 @@
 .item {
   position: relative;
   color: white;
-  font-family: 'BrushType-SemiBold', arial;
-  font-size: 30px;
+  font-family: 'Caveat Brush', cursive;
+  font-size: 24px;
   list-style: none;
   min-height: 100px;
   border-bottom: 1px solid #777675;
@@ -25,7 +25,7 @@
   position: absolute;
   padding: 20px 0 0 20px;
   width: 180px;
-  line-height: .8;
+  line-height: 1;
 }
 .imageInList {
   height: 75px;
@@ -54,7 +54,7 @@
 }
 .btnBody {
   color: #fdcaa3;
-  font-family: 'BrushType-SemiBold', arial;
+  font-family: 'Caveat Brush', cursive;
   font-size: 30px;
   width: 40px;
   height: 40px;

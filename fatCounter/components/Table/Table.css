@@ -1,6 +1,7 @@
 ﻿.image {
   height: 100px;
 }
+
 .imageBlock {
   display: inline-block; 
   position: relative;
@@ -27,9 +28,9 @@
   left: 10px;
   color: white;
   text-align: center;
-  font-family: 'BrushType-SemiBold', arial;
-  font-size: 22px;
-  line-height: .8;
+  font-family: 'Caveat Brush', cursive;
+  font-size: 20px;
+  line-height: 1;
 }
 .foodCount_ {
   display: none;
@@ -54,7 +55,7 @@
   right: 10px;
   color: red;
   font-size: 30px;
-  font-family: 'BrushType-SemiBold', arial;
+  font-family: 'Caveat Brush', cursive;
 }
 
 @media screen and (max-width: 768px) {
@@ -94,7 +95,7 @@
     right: 12px;
     color: red;
     font-size: 30px;
-    font-family: 'BrushType-SemiBold', arial;
+    font-family: 'Caveat Brush', cursive;
   }
   .foodName {
     position: absolute;
@@ -102,7 +103,7 @@
     left: 10px;
     color: white;
     text-align: center;
-    font-family: 'BrushType-SemiBold', arial;
+    font-family: 'Caveat Brush', cursive;
     font-size: 32px;
     line-height: .8;
   }

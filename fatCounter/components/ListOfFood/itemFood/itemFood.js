@@ -33,7 +33,7 @@ class ItemFood extends React.PureComponent {
   }
 
   render() {  
-     console.log("render", this.props.code);
+    //  console.log("render", this.props.code);
         return (<li className={"item "+this.props.checked}
                                                  key = {this.props.code} 
                                                  onClick={this.checkProduct} 

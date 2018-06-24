@@ -91,11 +91,11 @@ class intFoodGrafics extends React.PureComponent {
     },
     title: {
         text: 'Пищевая ценность продукта',
-        style: { "color": "white", "fontSize": "30px", "font-family":"'BrushType-SemiBold', arial;" },
+        style: { "color": "white", "fontSize": "30px", "font-family":'Caveat Brush, cursive'  },
     },
     subtitle: {
         text: 'Суммарное количество калорий, белков, жиров и углеводов',
-        style: { "color": "white", "fontSize": "18px", "font-family":"'BrushType-SemiBold', arial;" },
+        style: { "color": "white", "fontSize": "18px", "font-family":'Caveat Brush, cursive'  },
     },
     plotOptions: {
         column: {
@@ -117,7 +117,7 @@ class intFoodGrafics extends React.PureComponent {
             style: {
                 fontSize: '24px',
                 color: 'white',
-                fontFamily: 'BrushType-SemiBold, arial',
+                fontFamily: 'Caveat Brush, cursive' ,
             }
         }
     },
@@ -130,7 +130,7 @@ class intFoodGrafics extends React.PureComponent {
           style: {
             fontSize: '24px',
             color: 'white',
-            fontFamily: 'BrushType-SemiBold, arial',
+            fontFamily: 'Caveat Brush, cursive' ,
         }
         }
     },

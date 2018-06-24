@@ -12,6 +12,7 @@ class intListOfFood extends React.PureComponent {
 
   static propTypes = {
     products: PropTypes.object,
+    nameOfRestaurant: PropTypes.string,
   };
 
   state = {
@@ -19,18 +20,18 @@ class intListOfFood extends React.PureComponent {
   }
 
   checkProduct = (e) => {
-    let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
+    let url = this.props.nameOfRestaurant;
     this.props.dispatch( check_Product(e.currentTarget.dataset.identifier, url) );
   };
 
   plusProduct = (e) => {
-    let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
+    let url = this.props.nameOfRestaurant;
     e.stopPropagation();
     this.props.dispatch( changeCount_Product(e.currentTarget.dataset.identifier, 1, url) );
   };
 
   minusProduct = (e) => {
-    let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
+    let url = this.props.nameOfRestaurant;
     e.stopPropagation();
     let arr = null;
     switch ( url ) {
@@ -55,7 +56,7 @@ class intListOfFood extends React.PureComponent {
   }
 
   arrDefinder = () =>  {
-    let url = window.location.href.split('/')[window.location.href.split('/').length-1].toLowerCase();
+    let url = this.props.nameOfRestaurant;
     let arr = null;
     switch ( url ) {
       case 'mcdonalds':
@@ -77,7 +78,7 @@ class intListOfFood extends React.PureComponent {
            { ( arr.some((item, index) => {if (item.modal){return true;}})) &&
            <ModalWindow/>
            }
-                <input className={"input"} type = {"text"} onChange = {this.searchFood} placeholder="Поиск"/>
+                <input className={"input"} type = {"text"} onChange = {this.searchFood} placeholder="Поиск..."/>
                 <ul className="list rounded" style = {{height: document.documentElement.clientHeight-100-54}}>
                   {arr.filter(V => V.name.toLowerCase().indexOf(this.state.string) > -1).map( V =>
                   {  let checked = "";

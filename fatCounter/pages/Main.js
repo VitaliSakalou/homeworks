@@ -15,10 +15,10 @@ class intMain extends React.Component {
           <NavLink to="/" exact className="PageLink" activeClassName="ActivePageLinkMain">
               <span className="backgroundMain"><img className="PageLink" src = {"/./img/logo/MAINW.png"}/></span>
           </NavLink>
-          <NavLink to="/McDonalds" className="PageLink" activeClassName="ActivePageLinkMain">
+          <NavLink to="/restaurantMC/mcdonalds" className="PageLink" activeClassName="ActivePageLinkMain">
             <span className="backgroundMC"><img className="PageLink" src = {"/./img/logo/MCLOGOW.png"}/></span>
           </NavLink>
-          <NavLink to="/BurgerKing" className="PageLink" activeClassName="ActivePageLinkMain">
+          <NavLink to="/restaurantBK/burgerking" className="PageLink" activeClassName="ActivePageLinkMain">
               <span className="backgroundBK"><img className="PageLink" src = {"/./img/logo/BKLOGOB.png"}/></span>
           </NavLink>
          </div>

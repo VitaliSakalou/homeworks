@@ -33,6 +33,7 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "@types/react-router-dom": "^4.2.7",
     "es6-promise": "^4.1.1",
     "halogen": "^0.2.0",
     "halogenium": "^2.2.3",
